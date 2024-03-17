@@ -16,6 +16,14 @@ public class Startup
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
     {
+        app.Use(async (context, next) =>
+        {
+            await context.Response.WriteAsync("Hello from Use \n");
+            await next();
+            
+        });
+        app.Run(async context => await context.Response.WriteAsync("Hello from Run\n"));
+        
         if (environment.IsDevelopment())
         {
             app.UseDeveloperExceptionPage();
