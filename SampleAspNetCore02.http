@@ -1,0 +1,6 @@
+@SampleAspNetCore02_HostAddress = http://localhost:5000
+
+GET {{SampleAspNetCore02_HostAddress}}/test/get
+Accept: application/json
+
+###

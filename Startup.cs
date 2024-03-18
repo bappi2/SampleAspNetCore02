@@ -18,8 +18,16 @@ public class Startup
     {
         app.Use(async (context, next) =>
         {
-            await context.Response.WriteAsync("Hello from Use \n");
+            await context.Response.WriteAsync("Hello from Use-1 1 \n");
             await next();
+            await context.Response.WriteAsync("Hello from Use-1 2 \n");
+            
+        });
+        app.Use(async (context, next) =>
+        {
+            await context.Response.WriteAsync("Hello from Use-2 1 \n");
+            await next();
+            await context.Response.WriteAsync("Hello from Use-2 2 \n");
             
         });
         app.Run(async context => await context.Response.WriteAsync("Hello from Run\n"));
