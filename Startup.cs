@@ -6,6 +6,7 @@ public class Startup
     
     public Startup(IConfiguration configuration)
     {
+        ArgumentNullException.ThrowIfNull(configuration);
         Configuration = configuration; 
     }
 
