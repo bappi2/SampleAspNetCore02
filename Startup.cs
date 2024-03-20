@@ -17,7 +17,7 @@ public class Startup
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment environment)
     {
-        app.Use(async (context, next) =>
+        /*app.Use(async (context, next) =>
         {
             await context.Response.WriteAsync("Hello from Use-1 1 \n");
             await next();
@@ -32,6 +32,7 @@ public class Startup
             
         });
         app.Run(async context => await context.Response.WriteAsync("Hello from Run\n"));
+        */
         
         if (environment.IsDevelopment())
         {
